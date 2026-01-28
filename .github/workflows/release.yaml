@@ -1,0 +1,22 @@
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 12 * * *"
+
+name: release
+
+jobs:
+  release:
+    uses: daveleroy/SublimeDebugger/.github/workflows/sync-build-release.yml@master
+
+    with:
+      upstream: Marus/cortex-debug
+      repository: cortex-debug
+
+      build: |
+        npm install
+        npm run build
+        npx vsce package -o extension.vsix
+
+    secrets:
+      token: ${{ secrets.PUSH_TOKEN }}
