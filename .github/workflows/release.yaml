@@ -8,7 +8,9 @@ name: release
 jobs:
   release:
     uses: daveleroy/SublimeDebugger/.github/workflows/sync-build-release.yml@master
-
+    permissions:
+       actions: write
+      
     with:
       upstream: Marus/cortex-debug
       repository: cortex-debug
