@@ -19,4 +19,4 @@ jobs:
         npx vsce package -o extension.vsix
 
     secrets:
-      token: ${{ github.token }}
+      token: ${{ secrets.GITHUB_TOKEN }}
