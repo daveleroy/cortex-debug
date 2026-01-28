@@ -10,7 +10,6 @@ jobs:
     uses: daveleroy/SublimeDebugger/.github/workflows/sync-build-release.yml@master
     permissions:
        actions: write
-       workflows: write
        contents: write
        
     with:
